@@ -10,13 +10,13 @@
             border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
             width: 450px; margin: auto; text-align: center;
         }
-        button { 
-            background: #0070d2; color: white; border: none; 
-            padding: 15px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; font-weight: bold;
+        .btn-link { 
+            display: block; background: #0070d2; color: white; border: none; 
+            padding: 15px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; text-decoration: none; margin-top: 20px;
         }
-        button:hover { background: #005fb2; }
+        .btn-link:hover { background: #005fb2; }
         .status { margin-top: 20px; color: #666; font-style: italic; }
-        .guest-info { text-align: left; background: #f9f9f9; padding: 15px; border: 1px solid #ddd; margin-bottom: 20px; border-radius: 4px;}
+        .guest-info { text-align: left; background: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 4px;}
     </style>
 </head>
 <body>
@@ -32,33 +32,14 @@
         Status: VIP - Golden Profile Sync Active
     </div>
 
-    <button onclick="popSidebarHack()">Check In: Malania Lexington</button>
+    <a href="https://storm-136b1734bb07cf.my.salesforce.com/lightning/r/Contact/003Ws00000SnTr2IAF/view" 
+       class="btn-link"
+       oncontextmenu="document.getElementById('status').innerText = 'Event Bus Match. Loading Golden Profile in Sidebar...';">
+       Check In: Malania Lexington (Right-Click -> Open in sidebar)
+    </a>
     
     <div id="status" class="status">Waiting for check-in...</div>
 </div>
-
-<script>
-    function popSidebarHack() {
-        document.getElementById('status').innerText = "Event Bus Match. Popping Sidebar...";
-        
-        // Your exact domain and Malania's exact ID
-        const targetUrl = "https://storm-136b1734bb07cf.my.salesforce.com/lightning/r/Contact/003Ws00000SnTr2IAF/view";
-        
-        // THE DEMO HACK: 
-        // We calculate the user's screen width and create a window that is 
-        // 400px wide, 100% tall, and pushed all the way to the right edge.
-        const width = 400;
-        const height = window.screen.availHeight;
-        const left = window.screen.availWidth - width;
-        
-        // This opens a window that looks and feels exactly like the Edge Sidebar opening
-        window.open(
-            targetUrl, 
-            "SalesforceSidebarMock", 
-            `width=${width},height=${height},left=${left},top=0,menubar=no,toolbar=no,location=no,status=no`
-        );
-    }
-</script>
 
 </body>
 </html>
