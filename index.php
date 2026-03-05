@@ -38,7 +38,7 @@
         // In reality, MuleSoft would resolve this to a real Salesforce Contact ID
         let contactId = "";
         if (name.toLowerCase().includes("malania lexington")) {
-            contactId = "003XXXXXXXXXXXXXXX"; // REPLACE with the real Salesforce Contact ID for Malania
+            contactId = "003Ws00000SnTr2IAF"; // REPLACE with the real Salesforce Contact ID for Malania
             status.innerText = "Signal sent to MuleSoft for: " + name;
         } else {
             status.innerText = "Guest not found in Golden Profile sync.";
