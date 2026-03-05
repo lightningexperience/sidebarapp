@@ -43,7 +43,7 @@
             const contactId = "003Ws00000SnTr2IAF";
             
             // YOU MUST CHANGE 'yourdomain' TO YOUR ACTUAL SALESFORCE DOMAIN PREFIX
-            const targetUrl = `https://yourdomain.lightning.force.com/lightning/r/Contact/${contactId}/view`;
+            const targetUrl = `https://storm-136b1734bb07cf.my.salesforce.com/lightning/r/Contact/${contactId}/view`;
             
             // Forces the browser to open the target URL
             window.open(targetUrl, "SalesforceSidebar"); 
